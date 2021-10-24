@@ -1,3 +1,6 @@
+import datetime
+
+
 class Employee:
     num_of_emps = 0
     raise_amt = 1.04
@@ -21,29 +24,21 @@ class Employee:
         cls.raise_amt = amount
 
     @classmethod
-    def from_string(cls, emp_str):
+    def from_string(cls, emp_str):  # from.. naming convention class methods
         first, last, pay = emp_str.split('-')
         return cls(first, last, pay)
+
+    @staticmethod
+    def is_workday(day):
+        if day.weekday() == 5 or day.weekday() == 6:
+            return False
+        return True
+
+
+my_date = datetime.date(2016, 7, 11)
+
+print(Employee.is_workday(my_date))
 
 
 emp_1 = Employee('Corey', 'Goat', 50000)
 emp_2 = Employee('Slimy', "Cat", 70000)
-
-Employee.set_raise_amt(1.05)  # is the same as Employee.set_raise_amt = 1.05
-
-""" class methods as alternative constructors """
-
-emp_str_1 = 'John-Doe-20000'
-emp_str_2 = 'Steve-Smith-30000'
-emp_str_3 = 'Abudulla-Gonzales-90000'
-
-
-new_emp_1 = Employee.from_string(emp_str_1)
-
-print(new_emp_1.email)
-print(new_emp_1.pay)
-
-
-# print(Employee.raise_amt)
-# print(emp_1.raise_amt)
-# print(emp_2.raise_amt)
