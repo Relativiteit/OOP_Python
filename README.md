@@ -10,6 +10,10 @@ Object oriented programming in python.
 
 3. `ClassMethods` class methods take the class as the first argument. Class methods can be used as alternative constructors.
 
+   3B. `FirstClassFunctions`
+
+   3C. `Closures`
+
 4. `Inheritance` Inheritance allows us to inherit attributes and methods from a parent class.
 
 5. `MagicDunderMethods` Dunder methods allow to emulate built-in types or implement operator overloading.
